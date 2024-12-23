@@ -1,0 +1,80 @@
+configuration {
+	display-drun: "Search:";
+	display-window: "Windows:";
+	drun-display-fomat: "{icon} {name}";
+	modi: "window,run,drun";
+	show-icons: true;
+	font: "SourceCodePro 15";
+}
+
+@theme "/dev/null"
+
+* {
+	bg: #121821;
+	bg-alt: #080b11;
+
+	fg: #cdc9bb;
+	fg-alt: #b27e3d;
+
+	background-color: @bg;
+
+	border: 0;
+	margin: 0;
+	padding: 0;
+	spacing: 0;
+}
+
+window {
+	width: 30%;
+}
+
+element {
+	padding: 12 5 5 12;
+	text-color: @fg-alt;
+}
+
+element selected {
+	text-color: @fg;
+}
+
+element-text {
+	background-color: inherit;
+	text-color: inherit;
+	padding: 0 0 0 20;
+	vertical-align: 0.5;
+}
+
+element-icon {
+	size: 30;
+}
+
+entry {
+	background-color: @bg-alt;
+	padding: 12 12 12 0;
+	text-color: @fg;
+}
+
+inputbar {
+	children: [prompt, entry];
+	padding: 5;
+	background-color: @bg-alt;
+}
+
+listview {
+	background-color: @bg;
+	padding: 20;
+	columns: 1;
+	lines: 6;
+}
+
+mainbox {
+	background-color: @bg;
+	children: [inputbar, listview];
+}
+
+prompt {
+	background-color: @bg-alt;
+	enabled: true;
+	padding: 12 12 12 20;
+	text-color: @fg;
+}
