@@ -22,7 +22,7 @@ window {
 
 .sidestuff slider {
   all: unset;
-  color: #ffd5cd;
+  color: #ff0000;
 }
 
 .metric scale trough highlight {
@@ -42,10 +42,14 @@ window {
   margin-right: 20px;
 }
 
-.label-ram {
-  font-size: large;
+workspaces {
+  
 }
 
-.workspaces button:hover {
-  color: #D35D6E;
+.workspace-entry {
+  color: #FFFFFF;
+}
+
+.current {
+  color: #000000;
 }

@@ -1,3 +1,7 @@
+(defpoll volume :interval "1s" "zsh ~/.config/eww/scripts/get-volume")
+(defpoll battery :interval "5s" "zsh ~/.config/eww/scripts/get-battery --bat")
+(defpoll time :interval "1s" "date '+%H:%M:%S %b %d, %Y'")
+
 (defwindow topbar 
            :monitor 0
            :geometry (geometry :x "0px"
@@ -15,7 +19,6 @@
   (box :orientation "h"
     (workspaces)
     (window_w)
-    (music)
     (sidestuff)
   )
 )
@@ -25,11 +28,14 @@
     (metric :label ""
             :value volume
             :onchange "")
+    (metric :label ""
+            :value battery
+            :onchange "")
     (metric :label ""
             :value {EWW_RAM.used_mem_perc}
             :onchange "")
     (metric :label ""
-            :value {round((1 - (EWW_DISK["/"].free / EWW_DISK["/"].total)) * 100, 0)}
+            :value {round((1 - (EWW_DISK["/home"].free / EWW_DISK["/home"].total)) * 100, 0)}
             :onchange "")
     time))
 
@@ -52,12 +58,6 @@
        :halign "center"
     {music != "" ? "${music}" : "nuthin"}))
 
-(defpoll volume :interval "1s"
-  "zsh ~/.config/eww/scripts/get-volume")
-
-(defpoll time :interval "1s"
-  "date '+%H:%M:%S %b %d, %Y'")
-
 (deflisten music :initial ""
   "playerctl --follow metadata --format '{{ artist }} - {{ title }}' || true")
 
@@ -70,7 +70,7 @@
       (for workspace in workspaces
         (eventbox :onclick "hyprctl dispatch workspace ${workspace.id}"
           (box :class "workspace-entry ${workspace.windows > 0 ? "occupied" : "empty"}"
-            (label :text "${workspace.id}" :class "workspace-entry ${workspace.id == current_workspace ? "current" : ""}" )
+            (label :text "${workspace.id == current_workspace ? "" : ""}" :class "workspace-entry ${workspace.id == current_workspace ? "current" : ""}" )
             )
           )
         )

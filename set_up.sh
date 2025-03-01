@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/bash
 
 ignore=("./README.md" "./set_up.sh" "zshenv")
 
