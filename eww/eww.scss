@@ -10,15 +10,13 @@
 }
 
 window {
-  font-size: 14px;
+  font-size: 18px;
 
   & > * {
     margin: 3px;
   }
   font-family: "Ubuntu Nerd Font";
 }
-
-// Styles on classes (see eww.yuck for more information)
 
 .sidestuff slider {
   all: unset;
@@ -27,7 +25,7 @@ window {
 
 .metric scale trough highlight {
   all: unset;
-  background-color: #D35D6E;
+  background-color: #cc9393;
   color: #000000;
   border-radius: 10px;
 }
@@ -36,18 +34,24 @@ window {
   all: unset;
   background-color: #4e4e4e;
   border-radius: 50px;
-  min-height: 3px;
+  min-height: 8px;
   min-width: 50px;
   margin-left: 10px;
   margin-right: 20px;
 }
 
-workspaces {
-  
+.workspaces-widget {
+  /*border: solid blue 2px;*/
+}
+
+.workspaces-widget > box {
+  /*border: solid yellow 1px;*/
 }
 
 .workspace-entry {
   color: #FFFFFF;
+  padding: 0 5px;
+  /*border: solid red 1px;*/
 }
 
 .current {
