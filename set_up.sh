@@ -18,3 +18,7 @@ create_symlinks() {
 create_symlinks "."
 
 ln -sf "$PWD/zshenv" "${HOME}/.zshenv"
+
+# Install Packer
+# git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+# ~/.local/share/nvim/site/pack/packer/start/packer.nvim
