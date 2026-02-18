@@ -48,3 +48,4 @@ export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 # PATH
 #export PATH="$NPM_BIN:$PATH"
 #Add Python & pip?
+export PATH="$HOME/Programming/pi-kernal/cross-compiler/bin:$PATH"
